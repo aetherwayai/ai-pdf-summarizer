@@ -1,17 +1,16 @@
 import requests
 
-API_KEY = "YOUR_GROK_API_KEY"
+API_KEY = "your_groq_api_key_here"
 
 def summarize_text(text):
-    url = "https://api.x.ai/v1/chat/completions"
-
+    url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
     }
 
     data = {
-        "model": "grok-beta",
+        "model": "llama-3.1-8b-instant",
         "messages": [
             {"role": "user", "content": f"Summarize this:\n{text}"}
         ]
